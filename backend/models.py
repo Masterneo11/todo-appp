@@ -1,5 +1,9 @@
-from pydantic import BaseModel
+from database import Base
 
-class Todo(BaseModel):
-    number: int
-    description: str
+from sqlalchemy import Column, Integer, String
+
+class Todo(Base):
+    __tablename__ = "todos"
+    id = Column(Integer, primary_key=True)
+    number = Column(Integer)
+    description = Column(String)
