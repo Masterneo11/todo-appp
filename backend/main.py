@@ -5,7 +5,7 @@ from models import Todo
 
 app = FastAPI()
 
-todos: list[Todo] = Todo
+todos: list[Todo] = []
 
 @app.get("/")
 async def get_todos() -> list[Todo]:
